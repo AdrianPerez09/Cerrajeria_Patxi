@@ -5,6 +5,7 @@
  */
 package application;
 
+import factories.UserManagerFactory;
 import java.util.logging.Logger;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,7 +31,7 @@ public class Application extends javafx.application.Application {
         Parent root = (Parent) fxmlLoader.load();
         SignInController controller = ((SignInController) fxmlLoader.getController());
         controller.setStage(primaryStage);
-
+        controller.setUm(UserManagerFactory.createUsersManager());
         LOGGER.info("Openning SignIn Window");
         controller.initStage(root);
     }

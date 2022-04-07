@@ -29,9 +29,6 @@ public interface UserManager {
 
     public void resetPassword(String user) throws BusinessLogicException;
 
-    public List<User> findAllAdmins() throws BusinessLogicException;
-
-    public List<User> findAllAdminsByLogin(String login) throws BusinessLogicException;
 
     public void close();
 

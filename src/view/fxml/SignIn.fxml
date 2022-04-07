@@ -36,9 +36,9 @@
    <right>
       <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="447.0" styleClass="loginPane" BorderPane.alignment="CENTER">
          <children>
-            <VBox layoutX="51.0" layoutY="87.0" prefHeight="172.0" prefWidth="289.0" spacing="15.0">
+            <VBox layoutX="51.0" layoutY="87.0" prefHeight="172.0" prefWidth="289.0" spacing="20.0">
                <children>
-                  <Label text="Nombre de usuario: " textFill="WHITE">
+                  <Label fx:id="lblLogin" text="Nombre de usuario: " textFill="WHITE">
                      <font>
                         <Font name="Noto Sans Light" size="24.0" />
                      </font>
@@ -46,8 +46,8 @@
                         <Insets />
                      </opaqueInsets>
                   </Label>
-                  <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="258.0" />
-                  <Label text="Contraseña" textFill="WHITE">
+                  <TextField fx:id="txtLogin" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="258.0" />
+                  <Label fx:id="lblPass" text="Contraseña" textFill="WHITE">
                      <font>
                         <Font name="Noto Sans Light" size="24.0" />
                      </font>
@@ -55,20 +55,31 @@
                         <Insets />
                      </opaqueInsets>
                   </Label>
-                  <PasswordField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="197.0" />
+                  <PasswordField fx:id="passfield" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="257.0" />
                   <HBox prefHeight="93.0" prefWidth="263.0">
                      <children>
-                        <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="127.0" text="¿Eres nuevo?" textFill="#fcfcfc">
+                        <Label fx:id="lblSignUp" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="127.0" text="¿Eres nuevo?" textFill="#fcfcfc">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="Corbel Light" size="14.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
                         </Label>
-                        <Hyperlink prefHeight="23.0" prefWidth="147.0" text="Crea una cuenta." />
+                        <Hyperlink fx:id="linkSignUp" onAction="#HandleSignUpWindow" prefHeight="23.0" prefWidth="164.0" text="Crea una cuenta." textFill="#1495ff">
+                           <font>
+                              <Font name="FrankRuhlHofshi-Regular" size="12.0" />
+                           </font>
+                        </Hyperlink>
                      </children>
                   </HBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" text="Iniciar sesión" />
+                        <Button fx:id="btnSignIn" alignment="CENTER" mnemonicParsing="false" onAction="#HandleSignIn" text="Iniciar sesión">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
                      </children>
                   </VBox>
                </children>
